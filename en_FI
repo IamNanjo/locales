@@ -1,0 +1,90 @@
+# English locale for Finland
+# Author: IamNanjo (Arttu Kaipainen)
+# URL: https://github.com/IamNanjo/locales
+
+LC_IDENTIFICATION
+title      "English locale for Finland"
+source     "Custom"
+address    ""
+contact    ""
+email      ""
+tel        ""
+fax        ""
+language   "English"
+territory  "Finland"
+revision   "1.0"
+date       "2024-08-30"
+END LC_IDENTIFICATION
+
+LC_CTYPE
+copy "fi_FI"
+END LC_CTYPE
+
+LC_COLLATE
+copy "fi_FI"
+END LC_COLLATE
+
+LC_TIME
+abday   "Sun";"Mon";"Tue";"Wed";"Thu";"Fri";"Sat"
+day     "Sunday";"Monday";"Tuesday";"Wednesday";"Thursday";"Friday";"Saturday"
+abmon   "Jan";"Feb";"Mar";"Apr";"May";"Jun";"Jul";"Aug";"Sep";"Oct";"Nov";"Dec"
+mon     "January";"February";"March";"April";"May";"June";"July";"August";"September";"October";"November";"December"
+d_t_fmt "%a %d %b %Y %T"
+d_fmt   "%d.%m.%Y"
+t_fmt   "%T"
+am_pm   "";""
+t_fmt_ampm ""
+first_weekday 2
+END LC_TIME
+
+LC_NUMERIC
+decimal_point ","
+thousands_sep " "
+grouping 3
+END LC_NUMERIC
+
+LC_MONETARY
+int_curr_symbol "EUR "
+currency_symbol "€"
+mon_decimal_point ","
+mon_thousands_sep " "
+mon_grouping 3
+positive_sign ""
+negative_sign "-"
+int_frac_digits 2
+frac_digits 2
+p_cs_precedes 1
+p_sep_by_space 1
+n_cs_precedes 1
+n_sep_by_space 1
+p_sign_posn 1
+n_sign_posn 1
+END LC_MONETARY
+
+LC_MESSAGES
+yesexpr "^[yY]"
+noexpr  "^[nN]"
+yesstr  "Yes"
+nostr   "No"
+END LC_MESSAGES
+
+LC_PAPER
+copy "fi_FI"
+END LC_PAPER
+
+LC_NAME
+copy "fi_FI"
+END LC_NAME
+
+LC_ADDRESS
+copy "fi_FI"
+END LC_ADDRESS
+
+LC_TELEPHONE
+copy "fi_FI"
+END LC_TELEPHONE
+
+LC_MEASUREMENT
+copy "fi_FI"
+END LC_MEASUREMENT
+
