@@ -12,8 +12,8 @@ tel        ""
 fax        ""
 language   "English"
 territory  "Finland"
-revision   "1.0"
-date       "2024-08-30"
+revision   "1.1"
+date       "2025-02-23"
 END LC_IDENTIFICATION
 
 LC_CTYPE
@@ -53,9 +53,9 @@ positive_sign ""
 negative_sign "-"
 int_frac_digits 2
 frac_digits 2
-p_cs_precedes 1
+p_cs_precedes 0
 p_sep_by_space 1
-n_cs_precedes 1
+n_cs_precedes 0
 n_sep_by_space 1
 p_sign_posn 1
 n_sign_posn 1
