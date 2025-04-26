@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 if grep -qiE '^(ID|ID_LIKE)=(arch|.*arch.*)' /etc/os-release; then
-	sudo cp en_FI /usr/share/i18n/locales/
+	localefile="en_FI"
+	localeoutfile="/usr/share/i18n/locales/$localefile"
+	! [ -f "$localeoutfile" ] && sudo cp $localefile $localeoutfile
 
 	# Uncomment locale if exists in /etc/locale.gen
 	sudo sed -i 's/^# *en_FI.UTF-8 UTF-8$/en_FI.UTF-8 UTF-8/' /etc/locale.gen
