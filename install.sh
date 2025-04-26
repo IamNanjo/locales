@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Add Finnish compose definitions
+sudo mkdir -p /usr/share/X11/locale/en_FI.UTF-8
+sudo cp ./en_FI.UTF-8/Compose /usr/share/X11/locale/en_FI.UTF-8/Compose
+
 if grep -qiE '^(ID|ID_LIKE)=(arch|.*arch.*)' /etc/os-release; then
 	localefile="en_FI"
 	localeoutfile="/usr/share/i18n/locales/$localefile"
@@ -22,6 +26,7 @@ fi
 CONFIG_FILES=("$HOME/.bashrc" "$HOME/.zshrc")
 CONFIG_LANG="export LANG=en_FI.UTF-8"
 CONFIG_LC_ALL="export LC_ALL=en_FI.UTF-8"
+CONFIG_XCOMPOSEFILE="export XCOMPOSEFILE=/usr/share/X11/locale/fi_FI.UTF-8/Compose"
 
 for CONFIG_FILE in ${CONFIG_FILES[@]}; do
 	if ! [ -w $CONFIG_FILE ]; then
@@ -32,8 +37,10 @@ for CONFIG_FILE in ${CONFIG_FILES[@]}; do
 
 	LANG_ALREADY_SET=$(grep -qiE "export LANG=['\"]?en_FI.UTF-8['\"]?" $CONFIG_FILE && echo true || echo false)
 	LC_ALL_ALREADY_SET=$(grep -qiE "export LC_ALL=['\"]?en_FI.UTF-8['\"]?" $CONFIG_FILE && echo true || echo false)
+	XCOMPOSEFILE_ALREADY_SET=$(grep -qiE "export XCOMPOSEFILE=" $CONFIG_FILE && echo true || echo false)
 
-	if [ "$LANG_ALREADY_SET" = true ] && [ "$LC_ALL_ALREADY_SET" = true ]; then
+
+	if [ "$LANG_ALREADY_SET" = true ] && [ "$LC_ALL_ALREADY_SET" = true ] && [ "$XCOMPOSEFILE_ALREADY_SET" = true ]; then
 		echo "Locale already enabled in $CONFIG_FILE"
 		continue
 	else
