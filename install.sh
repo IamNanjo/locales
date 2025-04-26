@@ -40,7 +40,8 @@ for CONFIG_FILE in ${CONFIG_FILES[@]}; do
 		echo "Enabling locale in $CONFIG_FILE"
 	fi
 
-	[ "$LANG_ALREADY_SET" = false ] && echo LANG_ALREADY_SET
-	[ "$LC_ALL_ALREADY_SET" = false ] && echo LC_ALL_ALREADY_SET
+	[ "$XCOMPOSEFILE_ALREADY_SET" = false ] && echo "$CONFIG_XCOMPOSEFILE" | tee -a "$CONFIG_FILE"
+	[ "$LANG_ALREADY_SET" = false ] && echo "$CONFIG_LANG" | tee -a "$CONFIG_FILE"
+	[ "$LC_ALL_ALREADY_SET" = false ] && echo "$CONFIG_LC_ALL" | tee -a "$CONFIG_FILE"
 	echo
 done
